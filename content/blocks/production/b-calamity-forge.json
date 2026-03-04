@@ -1,4 +1,5 @@
 {
+  "research": "b-stellar-furnace",
   "type": "GenericCrafter",
   "researchCostMultiplier": 0.5,
   "destructible": true,
