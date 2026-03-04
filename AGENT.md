@@ -23,3 +23,11 @@ When fixing missing tech tree nodes (e.g., `b-calamity-forge` not showing up):
 *   Ensure that a `research` property exists in the block's `.json` definition.
 *   Example: `"research": "b-stellar-furnace"`
 *   Verify that the parent node actually exists in the current mod environment and is accessible, otherwise the block will remain hidden.
+
+## 4. Automated Build Script (`build_and_verify.py`)
+To prevent these packaging and verification issues, always use the included `build_and_verify.py` script instead of manually packaging the `.zip`.
+*   **Usage:** Run `python build_and_verify.py` from the root of the mod repository.
+*   **Features:**
+    1. Basic JSON linting (warns about structure, but tolerates Mindustry's lenient HJSON usage).
+    2. Identifies crafting blocks missing a `research` attribute and logs warnings.
+    3. Safely packages the mod into `build/aureusstratusexogenesis.zip` using Mindustry-compliant POSIX forward paths, completely bypassing the Zip-Slip security blocking issue.
